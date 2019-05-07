@@ -7,7 +7,7 @@ elevator::elevator(QWidget *parent, int _no, int _FLOOR_NUM) : QWidget(parent), 
 	FLOOR_NUM = _FLOOR_NUM;
 	QGroupBox *box = ui->groupBox_destination;
 
-	// Arrange windows on the screen and resize the box's size to include all the buttons.
+	// resize the window and box's size to include all the buttons.
 	if(FLOOR_NUM > 20){
 		box ->setGeometry(60, 10, 20 + 210 * (FLOOR_NUM / 21 + 1), 200);
 		this->setGeometry(0, 0, 210 * (FLOOR_NUM / 21 + 1) + 100, 380);

@@ -18,8 +18,8 @@ void MainWindow::run(){
 	int FLOOR_NUM = ui->spinBox_floor->value();
 	for(int i = 0; i < ui->spinBox_elevator->value(); i++){
 		elevator *ele = new elevator(nullptr, i, FLOOR_NUM);
-		ele->move( i % (GetSystemMetrics(SM_CXSCREEN) / ele->width()) * ele->width(),
-				   ((i + 1) * ele->width() / GetSystemMetrics(SM_CXSCREEN)) * (ele->height() + 30)
+		ele->move( i % (GetSystemMetrics(SM_CXSCREEN) / ele->width()) * (ele->width() + 15),
+				   ((i + 1) * ele->width() / GetSystemMetrics(SM_CXSCREEN)) * (ele->height() + 40)
 				 );
 		ele->show();
 		eles.push_back(ele);
