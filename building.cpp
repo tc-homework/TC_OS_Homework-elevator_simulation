@@ -55,6 +55,8 @@ building::building(QWidget *parent, std::vector<elevator*> _eles, int _FLOOR_NUM
 			connect(floorBtnsDown[unsigned(i)], &QPushButton::clicked, this, [=]{floorBtnsDown[unsigned(i)]->setEnabled(false);});
 			connect(floorBtnsDown[unsigned(i)], &QPushButton::clicked, this, [=]{ele_select_send(false, i);});
 	}
+	floorBtnsDown[0]->hide();
+	floorBtnsUp[unsigned(FLOOR_NUM) - 1]->hide();
 
 	//set suitable box and window size
 	ui->groupBox_eles->setGeometry(10, 10, ELE_NUM > 10 ? 20 + 40 * ELE_NUM : 430, 300);
@@ -86,7 +88,7 @@ int building::ele_rate(bool reqUp, int reqFloor, int eleFloor, int eleStatus){
 	if(reqFloor == eleFloor) return 10000;
 	double distanceRating = double(abs(eleFloor - reqFloor)) / double(FLOOR_NUM);
 	if(eleStatus == 0) distanceRating *= 3;
-	double statusRating = eleStatus == 0 ? 0.9 : reqUp ? eleStatus == 1 ? eleFloor < reqFloor ? 1.0 : 0.2
+	double statusRating = eleStatus == 0 ? 1.0 : reqUp ? eleStatus == 1 ? eleFloor < reqFloor ? 1.0 : 0.2
 																		: eleFloor < reqFloor ? 0.6 : 0.4
 													   : eleStatus == 2 ? eleFloor > reqFloor ? 1.0 : 0.2
 																		: eleFloor > reqFloor ? 0.6 : 0.4;
