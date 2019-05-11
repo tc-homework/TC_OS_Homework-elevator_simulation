@@ -220,7 +220,9 @@ statusRating = eleStatus == 0 ? 1.0 : reqUp ? eleStatus == 1 ? eleFloor < reqFlo
 ```
 
 假设有一个请求在8楼, 上行. 此时的电梯有四种运行状态和一种停止状态, 且这四种状态是轮换的: 
+
 <img src="img/5.png" height="500">
+
 如果规定停止是状态 ⑤, 显然这五种状态的优劣: ⑤ = ① > ③ > ④ > ②. 据此得到上面的表格.
 
 #### ele_select_send()
