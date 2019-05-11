@@ -57,10 +57,10 @@ void elevator::open_door(){
 	t1.start();
 	while(t1.elapsed() < 800) QCoreApplication::processEvents();
 
-	door = 1; renew_label();// Opened: 1500ms.
+	door = 1; renew_label();// Opened: 1000ms.
 	QElapsedTimer t2;
 	t2.start();
-	while(t2.elapsed() < 1500) QCoreApplication::processEvents();
+	while(t2.elapsed() < 1000) QCoreApplication::processEvents();
 
 	door = 2;  renew_label(); //Closing: 800ms.
 	QElapsedTimer t3;
