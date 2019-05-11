@@ -148,7 +148,7 @@ void my_stop(); // To stop simiulations.
 如果电梯接收任务, 会继续判断该任务是否已经在任务列表 `destsOutside` 中, 如果不在, 则向 `destsOutside` 中添加此任务. 添加完成后, 临时添加一次电梯的状态检查 (避免添加任务后等待轮询函数的状态检查带来的滞后).
 
 #### timer_elevator_tick()
-电梯类有 `void timer_elevator_tick();` 方法, 每 800$ms$ 被触发器 `timer` 触发一次. 这个实现两个功能, 更新电梯状态, 修改 `currentFloor`. 之后根据电梯状态调用不同的检查函数 `check_when_run()` 或 `check_when_pause()`.
+电梯类有 `void timer_elevator_tick();` 方法, 每 800ms 被触发器 `timer` 触发一次. 这个实现两个功能, 更新电梯状态, 修改 `currentFloor`. 之后根据电梯状态调用不同的检查函数 `check_when_run()` 或 `check_when_pause()`.
 
 #### check_when_run() 和 check_when_pause()
 这两个方法负责检查电梯状态. 首先合并 `destsInsider` 和 `destsOutsider` 得到 `dests`. 之后判断电梯当前是否已经到达目的地, 如是, 则从对应的列表中删掉该任务. 之后分别判断并更新状态:
@@ -207,7 +207,7 @@ void my_stop(); // To stop simiulations.
 
 2. statusRating
 
-首先, 如果电梯停止中, 就将 `distanceRating` 乘以 $3$.
+首先, 如果电梯停止中, 就将 `distanceRating` 乘以 3.
 
 <table style="text-align:center;"><tr><td><b>电梯状态</b></td><td><b>请求类型</b></td><td><b>eleFloor ? reqFloor</b></td><td><b>statusRating</b></td></tr><tr><td >停止</td><td colspan="2">\</td><td><b>1.0</b></td></tr><tr><td rowspan="4">上升</td><td rowspan="2">上升</td><td><</td><td><b>1.0</b></td></tr><tr><td>></td><td><b>0.2</b></td></tr><tr><td rowspan="2">下降</td><td><</td><td><b>0.6</b></td></tr><tr><td>></td><td><b>0.4</b></td></tr><tr><td rowspan="4">下降</td><td rowspan="2">上升</td><td>></td><td><b>1.0</b></td></tr><tr><td><</td><td><b>0.2</b></td></tr><tr><td rowspan="2">下降</td><td>></td><td><b>0.6</b></td></tr><tr><td><</td><td><b>0.4</b></td></tr></table>
 
