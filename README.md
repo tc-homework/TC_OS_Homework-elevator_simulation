@@ -1,6 +1,6 @@
 # 处理机管理-电梯调度
 > 操作系统 课程作业 1 
-朱宽 1751130
+1751130
 
 ![](https://badgen.net/badge/Windows%2010/1903/blue) ![](https://badgen.net/badge/Qt/v5.12.0/green) ![](https://badgen.net/badge/MinGW%20x64/v8.1.0/cyan) ![](https://badgen.net/badge/build/passing/green) 
 
