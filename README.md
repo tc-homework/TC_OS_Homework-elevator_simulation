@@ -3,7 +3,7 @@
 
 ![](https://badgen.net/badge/Windows%2010/1903/blue) ![](https://badgen.net/badge/Qt/v5.12.0/green) ![](https://badgen.net/badge/MinGW%20x64/v8.1.0/cyan) ![](https://badgen.net/badge/build/passing/green) 
 
-![](./img/1.png)
+![](img/1.png)
 
 ## 项目背景及需求
 某一层楼20层，有五部互联的电梯。基于线程思想，编写一个电梯调度程序。
